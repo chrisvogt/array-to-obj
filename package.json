@@ -1,0 +1,59 @@
+{
+	"name": "array-to-obj",
+	"version": "1.0.0",
+	"description": "Convert an array of objects into a keyed object",
+	"license": "MIT",
+	"repository": "github:chrisvogt/array-to-obj",
+	"author": {
+		"name": "Chris Vogt",
+		"email": "mail@chrisvogt.me",
+		"url": "https://www.chrisvogt.me"
+	},
+	"engines": {
+		"node": ">=6"
+	},
+	"scripts": {
+		"build": "npm run compile",
+		"compile": "babel index.js -d lib/",
+		"prepublish": "npm run build",
+		"test": "xo && nyc ava"
+	},
+	"main": "./lib/index.js",
+	"files": [
+		"lib"
+	],
+	"keywords": [
+		"array",
+		"convert",
+		"dictionary",
+		"key",
+		"keys",
+		"list",
+		"modify",
+		"obj",
+		"object",
+		"val",
+		"value",
+		"values"
+	],
+	"dependencies": {},
+	"devDependencies": {
+		"@babel/cli": "^7.1.2",
+		"@babel/core": "^7.1.2",
+		"@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+		"@babel/preset-env": "^7.1.0",
+		"ava": "^0.25.0",
+		"codecov": "^3.0.0",
+		"nyc": "^13.1.0",
+		"xo": "^0.23.0"
+	},
+	"nyc": {
+		"reporter": [
+			"lcov",
+			"text"
+		]
+	},
+	"xo": {
+		"space": true
+	}
+}
