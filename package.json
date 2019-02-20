@@ -38,14 +38,14 @@
 	],
 	"dependencies": {},
 	"devDependencies": {
-		"@babel/cli": "^7.1.2",
-		"@babel/core": "^7.1.2",
-		"@babel/plugin-proposal-object-rest-spread": "^7.0.0",
-		"@babel/preset-env": "^7.1.0",
-		"ava": "^0.25.0",
-		"codecov": "^3.0.0",
-		"nyc": "^13.1.0",
-		"xo": "^0.23.0"
+		"@babel/cli": "7.1.2",
+		"@babel/core": "7.1.2",
+		"@babel/plugin-proposal-object-rest-spread": "7.0.0",
+		"@babel/preset-env": "7.1.0",
+		"ava": "0.25.0",
+		"codecov": "3.1.0",
+		"nyc": "13.1.0",
+		"xo": "0.23.0"
 	},
 	"nyc": {
 		"reporter": [
