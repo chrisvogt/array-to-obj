@@ -1,6 +1,6 @@
 {
 	"name": "array-to-obj",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Convert an array of objects into a keyed object",
 	"license": "MIT",
 	"repository": "github:chrisvogt/array-to-obj",

@@ -90,6 +90,11 @@ const converted = arrayToObj(books, {
     }
   }
 });
+
+// {
+//   9781784971571: { title: 'The Three-Body Problem' },
+//   FnaGgrrnEf: { title: 'The Dark Forest' }
+// }
 ```
 
 #### Pass a function as a key generator
@@ -106,6 +111,7 @@ const movies = [
 arrayToObj(sourceArray, {
   key: () => shortid.generate()
 });
+
 // {
 //   qy5Tisvbu: { released: '2001', title: 'Spirited Away' },
 //   kYzoS40SOn: { released: '2004', title: 'Howl\'s Moving Castle' }
@@ -137,4 +143,4 @@ The property to use as a key. The array index is used when the property is undef
 
 ## License
 
-MIT © [Chris Vogt](https://chrisvogt.me)
+MIT © [Chris Vogt](https://www.chrisvogt.me)
