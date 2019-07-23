@@ -1,6 +1,6 @@
 {
 	"name": "array-to-obj",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Convert an array of objects into a keyed object",
 	"license": "MIT",
 	"repository": "github:chrisvogt/array-to-obj",
@@ -42,7 +42,7 @@
 		"@babel/core": "7.5.5",
 		"@babel/plugin-proposal-object-rest-spread": "7.5.5",
 		"@babel/preset-env": "7.5.5",
-		"ava": "1.4.1",
+		"ava": "2.2.0",
 		"codecov": "3.5.0",
 		"nyc": "14.1.1",
 		"xo": "0.24.0"
