@@ -38,14 +38,14 @@
 	],
 	"dependencies": {},
 	"devDependencies": {
-		"@babel/cli": "7.7.0",
+		"@babel/cli": "7.12.0",
 		"@babel/core": "7.7.2",
 		"@babel/plugin-proposal-object-rest-spread": "7.6.2",
 		"@babel/preset-env": "7.7.1",
-		"ava": "1.4.1",
+		"ava": "2.0.0",
 		"codecov": "3.6.1",
 		"nyc": "15.1.0",
-		"xo": "0.24.0"
+		"xo": "0.42.0"
 	},
 	"nyc": {
 		"reporter": [
