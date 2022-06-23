@@ -43,7 +43,7 @@
 		"@babel/plugin-proposal-object-rest-spread": "7.6.2",
 		"@babel/preset-env": "7.7.1",
 		"ava": "1.4.1",
-		"codecov": "3.6.1",
+		"codecov": "3.8.3",
 		"nyc": "15.1.0",
 		"xo": "0.24.0"
 	},
