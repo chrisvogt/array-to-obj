@@ -10,7 +10,7 @@
 		"url": "https://www.chrisvogt.me"
 	},
 	"engines": {
-		"node": ">=6"
+		"node": ">=18"
 	},
 	"scripts": {
 		"build": "npm run compile",
@@ -37,14 +37,13 @@
 		"values"
 	],
 	"devDependencies": {
-		"@babel/cli": "7.7.0",
-		"@babel/core": "7.7.2",
-		"@babel/plugin-proposal-object-rest-spread": "7.6.2",
-		"@babel/preset-env": "7.7.1",
-		"ava": "1.4.1",
-		"codecov": "^3.8.3",
-		"nyc": "15.1.0",
-		"xo": "0.24.0"
+		"@babel/cli": "^7.28.6",
+		"@babel/core": "^7.29.0",
+		"@babel/plugin-transform-object-rest-spread": "^7.28.6",
+		"@babel/preset-env": "^7.29.0",
+		"ava": "^6.4.1",
+		"nyc": "^17.1.0",
+		"xo": "^1.2.3"
 	},
 	"nyc": {
 		"reporter": [
@@ -53,6 +52,11 @@
 		]
 	},
 	"xo": {
-		"space": true
+		"space": true,
+		"rules": {
+			"unicorn/prefer-module": "off",
+			"unicorn/no-array-reduce": "off",
+			"unicorn/no-anonymous-default-export": "off"
+		}
 	}
 }

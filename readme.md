@@ -1,14 +1,12 @@
-# array-to-obj [![CI](https://github.com/chrisvogt/array-to-obj/actions/workflows/ci.yml/badge.svg)](https://github.com/chrisvogt/array-to-obj/actions/workflows/ci.yml) [![codecov](https://codecov.io/gh/chrisvogt/array-to-obj/badge.svg?branch=master)](https://codecov.io/gh/chrisvogt/array-to-obj?branch=master)
+# array-to-obj [![CI](https://github.com/chrisvogt/array-to-obj/actions/workflows/ci.yml/badge.svg)](https://github.com/chrisvogt/array-to-obj/actions/workflows/ci.yml) [![codecov](https://codecov.io/gh/chrisvogt/array-to-obj/badge.svg?branch=main)](https://codecov.io/gh/chrisvogt/array-to-obj?branch=main)
 
 > Convert an array of objects into a keyed object
-
 
 ## Install
 
 ```
 $ npm install array-to-obj
 ```
-
 
 ## Usage
 
