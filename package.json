@@ -1,7 +1,7 @@
 {
 	"name": "array-to-obj",
-	"version": "1.1.1",
-	"description": "Convert an array of objects into a keyed object",
+	"version": "1.2.0",
+	"description": "Index an array of objects by a specified key",
 	"license": "MIT",
 	"repository": "github:chrisvogt/array-to-obj",
 	"author": {
@@ -58,6 +58,15 @@
 		"extension": [
 			".js",
 			".mjs"
+		],
+		"include": [
+			"index.js"
+		],
+		"exclude": [
+			"test.mjs",
+			"coverage/**",
+			"babel.config.js",
+			"lib/**"
 		]
 	},
 	"xo": {

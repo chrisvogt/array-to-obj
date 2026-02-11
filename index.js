@@ -18,9 +18,13 @@ module.exports = (input, customOptions = {}) => {
     const {key: optKey} = options;
     const fallback = i;
 
-    const getKey = key => (isString(key) && key in current
-      ? current[key]
-      : key(current));
+    const getKey = key => {
+      if (isString(key)) {
+        return key in current ? current[key] : undefined;
+      }
+
+      return key(current);
+    };
 
     acc[getKey(optKey) || fallback] = current;
 
