@@ -6,27 +6,26 @@ module.exports = (input, customOptions = {}) => {
   }
 
   const defaultOptions = {
-    key: 'id'
+    key: 'id',
   };
 
   const options = {
     ...defaultOptions,
-    ...customOptions
+    ...customOptions,
   };
 
-  const obj = input.reduce((acc, current, i) => {
+  const object = input.reduce((acc, current, i) => {
     const {key: optKey} = options;
     const fallback = i;
 
-    const getKey = key => {
-      return isString(key) && key in current ?
-        current[key] : key(current);
-    };
+    const getKey = key => (isString(key) && key in current
+      ? current[key]
+      : key(current));
 
     acc[getKey(optKey) || fallback] = current;
 
     return acc;
   }, {});
 
-  return obj;
+  return object;
 };
