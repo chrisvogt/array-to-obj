@@ -45,10 +45,19 @@
 		"nyc": "^17.1.0",
 		"xo": "^1.2.3"
 	},
+	"ava": {
+		"files": [
+			"test.mjs"
+		]
+	},
 	"nyc": {
 		"reporter": [
 			"lcov",
 			"text"
+		],
+		"extension": [
+			".js",
+			".mjs"
 		]
 	},
 	"xo": {
