@@ -1,4 +1,4 @@
-# array-to-obj [![Build Status](https://travis-ci.org/chrisvogt/array-to-obj.svg?branch=master)](https://travis-ci.org/chrisvogt/array-to-obj) [![codecov](https://codecov.io/gh/chrisvogt/array-to-obj/badge.svg?branch=master)](https://codecov.io/gh/chrisvogt/array-to-obj?branch=master)
+# array-to-obj [![CI](https://github.com/chrisvogt/array-to-obj/actions/workflows/ci.yml/badge.svg)](https://github.com/chrisvogt/array-to-obj/actions/workflows/ci.yml) [![codecov](https://codecov.io/gh/chrisvogt/array-to-obj/badge.svg?branch=master)](https://codecov.io/gh/chrisvogt/array-to-obj?branch=master)
 
 > Convert an array of objects into a keyed object
 
