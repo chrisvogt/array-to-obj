@@ -1,7 +1,8 @@
 {
 	"name": "array-to-obj",
-	"version": "2.0.0",
+	"version": "2.1.0",
 	"description": "Index an array of objects by a specified key",
+	"deprecated": "This package is deprecated. Use native Object.fromEntries(), es-toolkit keyBy, or radashi objectify instead.",
 	"license": "MIT",
 	"repository": "github:chrisvogt/array-to-obj",
 	"author": {

@@ -1,142 +1,30 @@
-# array-to-obj [![CI](https://github.com/chrisvogt/array-to-obj/actions/workflows/ci.yml/badge.svg)](https://github.com/chrisvogt/array-to-obj/actions/workflows/ci.yml) [![codecov](https://codecov.io/gh/chrisvogt/array-to-obj/badge.svg?branch=main)](https://codecov.io/gh/chrisvogt/array-to-obj?branch=main)
+# array-to-obj (deprecated)
 
-> Convert an array of objects into a keyed object
+> **This package is deprecated.** Native JavaScript and modern utility libraries cover this use case better. No further updates will be published.
 
-## Install
+## Migration
 
-```
-$ npm install array-to-obj
-```
-
-## Requirements
-
-- **Node.js** [20.19 or newer](https://nodejs.org/en/about/previous-releases) (Node.js 18 reached [end of life](https://github.com/nodejs/Release) in April 2025). This matches the `engines` field in `package.json` and what CI runs. **2.0.0** is a major release because of this requirement; upgrading from **1.x** needs Node 20.19+ (or a newer LTS) in every environment that installs or runs this package with engine checks enabled.
-- To **run tests or build** this repo locally, use a supported Node version (see [`.nvmrc`](.nvmrc) for the version maintainers use day to day).
-
-## Usage
-
-#### Default key is `id`
+### Native `Object.fromEntries` (recommended — zero dependencies)
 
 ```js
+// Before
 const arrayToObj = require('array-to-obj');
+arrayToObj(users);
+arrayToObj(users, { key: 'name' });
+arrayToObj(users, { key: u => u.name.toLowerCase() });
 
-const districts = [
-  {id: 1, name: 'Richmond'},
-  {id: 2, name: 'Cow Hollow, Marina, Pacific Heights'}
-];
-
-arrayToObj(districts);
-
-// {
-//   1: { id: 1, name: 'Richmond' },
-//   2: { id: 2, name: 'Cow Hollow, Marina, Pacific Heights' }
-// }
+// After (ES2019+)
+Object.fromEntries(users.map(u => [u.id, u]));
+Object.fromEntries(users.map(u => [u.name, u]));
+Object.fromEntries(users.map(u => [u.name.toLowerCase(), u]));
 ```
 
-#### Pass a string as a key selector
+### Utility libraries
 
-```js
-const arrayToObj = require('array-to-obj');
+If you prefer a helper function, both of these provide TypeScript generics, tree-shaking, and value transformation:
 
-const songs = [
-  {title: 'Bluebird', artist: 'One Self'},
-  {title: 'Sunshine', artist: 'Atmosphere'}
-];
-
-arrayToObj(songs, {
-  key: 'title'
-});
-
-// {
-//   Bluebird: { title: 'Bluebird', artist: 'One Self' },
-//   Sunshine: { title: 'Sunshine', artist: 'Atmosphere' }
-// }
-```
-
-#### Pass a function as a key selector
-
-```js
-const arrayToObj = require('array-to-obj');
-
-const browsers = [
-  {engine: 'Blink', name: 'Chrome'},
-  {engine: 'Gecko', name: 'Firefox'}
-];
-
-arrayToObj(browsers, {
-  key: browser => browser.engine.toLowerCase()
-});
-
-// {
-//   blink: { engine: 'Blink', name: 'Chrome' },
-//   gecko: { engine: 'Gecko', name: 'Firefox' }
-// }
-```
-
-#### Try/catch in function selector
-
-```js
-const arrayToObj = require('array-to-obj');
-const shortid = require('shortid');
-
-const books = [
-  {title: 'The Three-Body Problem', meta: {upc: 9781784971571}},
-  {title: 'The Dark Forest'}
-];
-
-const converted = arrayToObj(books, {
-  key: book => {
-    try {
-      return book.meta.upc;
-    } catch (error) {
-      return shortid.generate();
-    }
-  }
-});
-```
-
-#### Pass a function as a key generator
-
-```js
-const arrayToObj = require('array-to-obj');
-const shortid = require('shortid');
-
-const movies = [
-  {released: '2001', title: 'Spirited Away'},
-  {released: '2004', title: 'Howl\'s Moving Castle'}
-];
-
-arrayToObj(sourceArray, {
-  key: () => shortid.generate()
-});
-// {
-//   qy5Tisvbu: { released: '2001', title: 'Spirited Away' },
-//   kYzoS40SOn: { released: '2004', title: 'Howl\'s Moving Castle' }
-// }
-```
-
-
-## API
-
-### arrayToObj(input, [options])
-
-#### input
-
-Type: `array`
-
-An array of objects to convert to an object.
-
-#### options
-
-Type: `Object`
-
-##### key
-
-Type: `string` or `function`<br>
-Default: 'id'
-
-The property to use as a key. The array index is used when the property is undefined.
-
+- **[es-toolkit](https://es-toolkit.dev/)** — `keyBy(arr, item => item.id)` for keying, `groupBy(arr, fn)` for grouping duplicates.
+- **[radashi](https://radashi.js.org/)** — `objectify(arr, getKey, getValue)` supports key _and_ value mapping in a single call.
 
 ## License
 
