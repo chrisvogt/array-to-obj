@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.0] - 2026-04-08
+
+### Breaking
+
+- **Node.js:** Minimum supported version is now **20.19+**. Node.js 18 is no longer supported (it reached end of life in April 2025). Reflected in `package.json` `engines`, the readme, and CI (Node 20, 22, and 24 only). The published API is unchanged; this release is for consumers and environments that must align with supported Node versions.
+
+### Changed
+
+- Raised dev tooling to current majors where needed for maintenance and security: `ava` 7, `nyc` 18, `xo` 2, and current `@babel/preset-env` patchline; added an npm `overrides` entry so the legacy `glob` → `minimatch@3` chain from `@babel/cli` uses a patched `brace-expansion`.
+
+### Security
+
+- `npm audit` reports **0** vulnerabilities after the above dependency refresh and override.
+
 ## [1.2.0] - 2026-02-11
 
 ### Fixed
@@ -43,5 +57,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Initial tracked version.
 
+[2.0.0]: https://github.com/chrisvogt/array-to-obj/compare/v1.2.0...v2.0.0
 [1.2.0]: https://github.com/chrisvogt/array-to-obj/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/chrisvogt/array-to-obj/releases/tag/v1.1.0

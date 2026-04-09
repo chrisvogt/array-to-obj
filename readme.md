@@ -8,6 +8,11 @@
 $ npm install array-to-obj
 ```
 
+## Requirements
+
+- **Node.js** [20.19 or newer](https://nodejs.org/en/about/previous-releases) (Node.js 18 reached [end of life](https://github.com/nodejs/Release) in April 2025). This matches the `engines` field in `package.json` and what CI runs. **2.0.0** is a major release because of this requirement; upgrading from **1.x** needs Node 20.19+ (or a newer LTS) in every environment that installs or runs this package with engine checks enabled.
+- To **run tests or build** this repo locally, use a supported Node version (see [`.nvmrc`](.nvmrc) for the version maintainers use day to day).
+
 ## Usage
 
 #### Default key is `id`
